@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>13-CSS3无缝轮播</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    div.slide {
+      width: 600px;
+      height: 340px;
+      background-color: #333;
+      overflow: hidden;
+      position: relative;
+      border-radius: 30px;
+    }
+
+    ul.list {
+      width: 3600px;
+      height: inherit;
+      background-color: #333;
+      animation: move 25s ease 1s infinite;
+      transition: all 2s;
+    }
+
+    ul.list:hover {
+      animation-play-state: paused;
+      cursor: pointer;
+    }
+
+    li.item {
+      width: 600px;
+      height: inherit;
+      float: left;
+    }
+
+    li.item img {
+      width: 600px;
+      height: 340px;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+
+      5% {
+        transform: translateX(0);
+      }
+
+      10% {
+        transform: translateX(0);
+      }
+
+      20% {
+        transform: translateX(-600px);
+      }
+
+      25% {
+        transform: translateX(-600px);
+      }
+
+      30% {
+        transform: translateX(-600px);
+      }
+
+      40% {
+        transform: translateX(-1200px);
+      }
+
+      45% {
+        transform: translateX(-1200px);
+      }
+
+      50% {
+        transform: translateX(-1200px);
+      }
+
+      60% {
+        transform: translateX(-1800px);
+      }
+
+      65% {
+        transform: translateX(-1800px);
+      }
+
+      70% {
+        transform: translateX(-1800px);
+      }
+
+      80% {
+        transform: translateX(-2400px);
+      }
+
+      85% {
+        transform: translateX(-2400px);
+      }
+
+      90% {
+        transform: translateX(-2400px);
+      }
+
+      100% {
+        transform: translateX(-3000px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>13-CSS3无缝轮播</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./12-百叶窗.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="slide">
+    <ul class="list">
+      <li class="item"><img src="../img/CC1.gif" alt=""></li>
+      <li class="item"><img src="../img/CC2.gif" alt=""></li>
+      <li class="item"><img src="../img/CC3.gif" alt=""></li>
+      <li class="item"><img src="../img/CC4.gif" alt=""></li>
+      <li class="item"><img src="../img/CC5.gif" alt=""></li>
+      <li class="item"><img src="../img/CC1.gif" alt=""></li>
+    </ul>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+
+</body>
+
+
+</html>

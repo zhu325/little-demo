@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>12-百叶窗</title>
+  <style>
+    ul {
+      width: 17rem;
+      height: 8rem;
+      display: flex;
+    }
+
+    ul>li {
+      transition: all .8s;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    li:hover {
+      flex-shrink: 0;
+    }
+
+    ul>li>img {
+      width: 10.666667rem;
+      height: 8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>12-百叶窗</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./11-3D旋转魔方.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./13-CSS3无缝轮播.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="container">
+    <ul>
+      <li><img src="../img/CC1.gif" alt=""></li>
+      <li><img src="../img/CC2.gif" alt=""></li>
+      <li><img src="../img/CC3.gif" alt=""></li>
+      <li><img src="../img/CC4.gif" alt=""></li>
+      <li><img src="../img/CC5.gif" alt=""></li>
+      <li><img src="../img/CC6.gif" alt=""></li>
+      <li><img src="../img/CC7.gif" alt=""></li>
+    </ul>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+
+</body>
+
+
+</html>

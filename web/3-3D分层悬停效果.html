@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>3-3D分层悬停效果</title>
+  <style>
+    .box {
+      perspective: 1800px;
+      transform-style: preserve-3d;
+    }
+
+    .photo {
+      width: 6.666667rem;
+      height: 12rem;
+      background-image: url(../img/MM.jpeg);
+      background-size: 6.666667rem 12rem;
+      /* background-size: cover; */
+      background-repeat: no-repeat;
+      position: relative;
+      cursor: pointer;
+      transition: all 1s;
+      opacity: 1;
+    }
+
+    .photo:hover {
+      transform: rotateX(30deg) rotateZ(-75deg) translateZ(1rem);
+    }
+
+    .photo span {
+      display: block;
+      width: 6.666667rem;
+      height: 12rem;
+      background-image: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      transition: all 1s;
+    }
+
+    .photo:hover span:nth-child(1) {
+      transform: translateX(-0.533333rem) translateY(-0.533333rem) translateZ(-0.666667rem);
+      opacity: 0.7;
+    }
+
+    .photo:hover span:nth-child(2) {
+      transform: translateX(-1.066667rem) translateY(-1.066667rem) translateZ(-1.333333rem);
+      opacity: 0.5;
+    }
+
+    .photo:hover span:nth-child(3) {
+      transform: translateX(-1.6rem) translateY(-1.6rem) translateZ(-2rem);
+      opacity: 0.3;
+    }
+
+    .photo:hover span:nth-child(4) {
+      transform: translateX(-2.133333rem) translateY(-2.133333rem) translateZ(-2.666667rem);
+      opacity: 0.1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>3-3D分层悬停效果</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./2-悬浮分享按钮.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./4-波浪加载.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="box">
+    <div class="photo">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+
+</body>
+
+
+</html>

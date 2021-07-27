@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>8-催眠动画</title>
+  <style>
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      transform-style: preserve-3d;
+      perspective: 200px;
+      overflow: hidden;
+      /* perspective-origin: 10% 10%; */
+    }
+
+    .circle {
+      position: absolute;
+      box-sizing: border-box;
+      width: 60vh;
+      height: 60vh;
+      border: 15px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      animation: move 5s ease-in-out infinite reverse both;
+      animation-delay: calc(var(--index)*.32s);
+    }
+
+    .circle::before,
+    .circle::after {
+      content: "";
+      position: absolute;
+      content: '';
+      box-sizing: border-box;
+      width: 60vh;
+      height: 60vh;
+      border-radius: 50%;
+      border: 15px solid #ccc;
+      filter: blur(10px);
+    }
+
+    .circle::after {
+      filter: blur(15px);
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateZ(190px) scale(1);
+      }
+
+      100% {
+        transform: translateZ(-1000px) scale(.1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>8-催眠动画</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./7-模拟键盘.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./9-Trump动画.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="container">
+    <div class="circle" style="--index:1"></div>
+    <div class="circle" style="--index:2"></div>
+    <div class="circle" style="--index:3"></div>
+    <div class="circle" style="--index:4"></div>
+    <div class="circle" style="--index:5"></div>
+    <div class="circle" style="--index:6"></div>
+    <div class="circle" style="--index:7"></div>
+    <div class="circle" style="--index:8"></div>
+    <div class="circle" style="--index:9"></div>
+    <div class="circle" style="--index:10"></div>
+    <div class="circle" style="--index:11"></div>
+    <div class="circle" style="--index:12"></div>
+    <div class="circle" style="--index:13"></div>
+    <div class="circle" style="--index:14"></div>
+    <div class="circle" style="--index:15"></div>
+    <div class="circle" style="--index:16"></div>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+  <script>
+    let container = document.querySelector('.container');
+    let window_width = document.documentElement.clientWidth;
+    let window_height = document.documentElement.clientHeight;
+    container.addEventListener("mousemove", function(e) {
+      var event = e || window.event;
+      var x = event.clientX;
+      var y = event.clientY;
+      let left = x / window_width * 100;
+      let top = y / window_height * 100;
+      container.style.perspectiveOrigin = left + "% " + top + "%";
+    })
+  </script>
+
+</body>
+
+
+</html>

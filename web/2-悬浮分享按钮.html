@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>2-悬浮分享按钮</title>
+  <style>
+    .admin {
+      font-size: 1.333333rem;
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: scale(.8);
+    }
+
+    .share {
+      width: 3.2rem;
+      height: 3.2rem;
+      border: solid #000 .16rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.333333rem;
+      background: #fff;
+      position: absolute;
+      z-index: 10000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .share i {
+      color: #000;
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .auto {
+      width: 8rem;
+      height: 8rem;
+      background-color: #fff;
+      border: solid rgb(0, 0, 0) .213333rem;
+      position: absolute;
+      border-radius: 50%;
+      z-index: 999;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: all .8s;
+    }
+
+    .box {
+      width: 8.8rem;
+      height: 8.8rem;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: all .8s;
+    }
+
+    .auto::before {
+      content: "";
+      width: .133333rem;
+      height: 8.213333rem;
+      display: block;
+      background: #000;
+      transform: rotate(45deg);
+      position: absolute;
+      top: -0.08rem;
+      left: 50%;
+    }
+
+    .auto::after {
+      content: "";
+      width: .133333rem;
+      height: 8.213333rem;
+      display: block;
+      background: #000;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: -0.08rem;
+      left: 50%;
+    }
+
+    .auto li i {
+      font-size: 1.466667rem;
+      color: #000;
+    }
+
+    .auto li:nth-child(1) {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .auto li:nth-child(2) {
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      transform: translateX(-50%);
+    }
+
+    .auto li:nth-child(3) {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .auto li:nth-child(4) {
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 5%;
+    }
+
+    .admin:hover .auto,
+    .admin:hover .box {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>2-悬浮分享按钮</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./1-导航栏.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./3-3D分层悬停效果.html" class="iconfont">&#xe609;</a>
+  </div>
+
+  <div class="admin">
+    <div class="share">
+      <i class="iconfont">&#xe759;</i>
+    </div>
+    <div class="auto">
+      <ul>
+        <li><i class="iconfont">&#xe63e;</i></li>
+        <li><i class="iconfont">&#xe673;</i></li>
+        <li><i class="iconfont">&#xe619;</i></li>
+        <li><i class="iconfont">&#xe63f;</i></li>
+      </ul>
+    </div>
+    <div class="box"></div>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+
+  <script>
+    let admin = document.querySelector(".admin")
+    console.log(admin);
+    let key = false;
+    let x = 0;
+    let y = 0;
+    let l = 0;
+    let t = 0;
+
+    admin.onmousedown = function(e) {
+      var event = e || window.event;
+      x = event.clientX;
+      y = event.clientY;
+      l = admin.offsetLeft;
+      t = admin.offsetTop;
+      key = true;
+      admin.style.cursor = "move";
+    }
+
+    window.onmousemove = function(e) {
+      var event = e || window.event;
+      var nl = event.clientX - (x - l);
+      var nt = event.clientY - (y - t);
+      if (key) {
+        admin.style.left = nl + "px";
+        admin.style.top = nt + "px";
+      }
+    }
+    admin.onmouseup = function(e) {
+      var event = e || window.event;
+      key = false;
+      admin.style.cursor = "pointer";
+    }
+  </script>
+</body>
+
+
+</html>

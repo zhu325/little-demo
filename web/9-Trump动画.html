@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>9-Trump动画</title>
+  <style>
+    .container>span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -500%);
+      font-size: .533333rem;
+      font-weight: bold;
+    }
+
+    .trump {
+      width: 100px;
+      height: 100px;
+      background-image: url(../img/trump.png);
+      position: relative;
+    }
+
+    .trump::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      width: 30px;
+      height: 5px;
+      background-color: ivory;
+    }
+
+    .runDown {
+      animation: runDown 1s steps(6) infinite;
+    }
+
+    .runLeft {
+      animation: runLeft 1s steps(6) infinite;
+    }
+
+    .runUp {
+      animation: runUp 1s steps(6) infinite;
+    }
+
+    .runRight {
+      animation: runRight 1s steps(6) infinite;
+    }
+
+
+    @keyframes runDown {
+      form {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 600px 0;
+      }
+    }
+
+    @keyframes runUp {
+      form {
+        background-position: 0 200px;
+      }
+
+      to {
+        background-position: 600px 200px;
+      }
+    }
+
+    @keyframes runLeft {
+      form {
+        background-position: 0 100px;
+      }
+
+      to {
+        background-position: 600px 100px;
+      }
+    }
+
+    @keyframes runRight {
+      form {
+        background-position: 0 300px;
+      }
+
+      to {
+        background-position: 600px 300px;
+      }
+    }
+
+    .projector {
+      width: 10.133333rem;
+      height: 10.133333rem;
+      background-image: url(../img/projector.png);
+      position: absolute;
+      right: -2rem;
+      bottom: -0.8rem;
+      transform: scale(.5);
+      transition: all .5s;
+      cursor: pointer;
+    }
+
+
+    .projector:hover {
+      animation: pro 2s steps(16) infinite;
+      transform: translateX(-.533333rem) scale(.6);
+    }
+
+    @keyframes pro {
+      form {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 0 6080px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>9-Trump动画</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./8-催眠动画.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./10-3D旋转木马.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="container">
+    <div class="trump runDown"></div>
+    <span>使用上下左右键改变方向</span>
+    <div class="projector"></div>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+  <script>
+    $(document).keydown(function(event) {
+      var event = event || window.event;
+      console.log(event);
+      switch (event.keyCode) {
+        case 38:
+          $(".trump").css("background-position", "0 200px").removeClass().addClass("trump runUp");
+          break;
+        case 40:
+          $(".trump").css("background-position", "0 0").removeClass().addClass("trump runDown");
+          break;
+        case 37:
+          $(".trump").css("background-position", "0 100px").removeClass().addClass("trump runLeft");
+          break;
+        case 39:
+          $(".trump").css("background-position", "0 300px").removeClass().addClass("trump runRight");
+          break;
+        default:
+          break;
+      }
+    })
+  </script>
+</body>
+
+
+</html>

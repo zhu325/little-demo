@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>4-波浪加载</title>
+  <style>
+    .container {
+      position: relative;
+      width: 16rem;
+      height: 16rem;
+      transform-style: preserve-3d;
+      perspective: 800px;
+      transform: rotateX(60deg) scale(.8);
+    }
+
+    .container span {
+      position: absolute;
+      left: calc(var(--index)*15px);
+      top: calc(var(--index)*15px);
+      right: calc(var(--index)*15px);
+      bottom: calc(var(--index)*15px);
+      display: block;
+      border-radius: 50%;
+      border: 5px#fff solid;
+      box-sizing: border-box;
+      box-shadow: 0 3px 0 #ccc, inset 0 3px 0 #ccc;
+      animation: anima 3s ease-in-out infinite both;
+      animation-delay: calc((var(--index)*.1s));
+    }
+
+    @keyframes anima {
+      0% {
+        transform: translateZ(100px);
+        opacity: 0.2;
+      }
+
+      50% {
+        transform: translateZ(-100px);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateZ(100px);
+        opacity: 0.2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>4-波浪加载</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./3-3D分层悬停效果.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./5-方块掉落.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="container">
+    <span style="--index:1"></span>
+    <span style="--index:2"></span>
+    <span style="--index:3"></span>
+    <span style="--index:4"></span>
+    <span style="--index:5"></span>
+    <span style="--index:6"></span>
+    <span style="--index:7"></span>
+    <span style="--index:8"></span>
+    <span style="--index:9"></span>
+    <span style="--index:10"></span>
+    <span style="--index:11"></span>
+    <span style="--index:12"></span>
+    <span style="--index:13"></span>
+    <span style="--index:14"></span>
+    <span style="--index:15"></span>
+    <span style="--index:16"></span>
+    <span style="--index:17"></span>
+    <span style="--index:18"></span>
+    <span style="--index:19"></span>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+
+</body>
+
+
+</html>

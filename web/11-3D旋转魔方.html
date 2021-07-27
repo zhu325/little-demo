@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>11-3D旋转魔方</title>
+  <style>
+    .container {
+      width: 156px;
+      margin: 0 auto;
+      position: relative;
+      perspective: 10000px;
+      transform-style: preserve-3d;
+      animation: rotate 10s ease-in-out infinite forwards alternate;
+      cursor: pointer;
+    }
+
+    .container:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotateX(60deg) rotateY(60deg);
+      }
+
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .side {
+      display: flex;
+      width: 156px;
+      flex-wrap: wrap;
+      position: absolute;
+    }
+
+    .side>li {
+      width: 50px;
+      height: 50px;
+      /* background-color: #3498db; */
+      border: #222 solid 5px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      opacity: .9;
+      margin: 1px;
+    }
+
+    .side:nth-child(1)>li {
+      background-color: #2980b9;
+    }
+
+    .side:nth-child(2)>li {
+      background-color: #27ae60;
+    }
+
+    .side:nth-child(3)>li {
+      background-color: #f39c12;
+    }
+
+    .side:nth-child(4)>li {
+      background-color: #ecf0f1;
+    }
+
+    .side:nth-child(5)>li {
+      background-color: #c0392b;
+    }
+
+    .side:nth-child(6)>li {
+      background-color: #2c3e50;
+    }
+
+
+    .side:nth-child(1) {
+      transform: translateZ(78px);
+    }
+
+    .side:nth-child(2) {
+      transform: rotateY(90deg) translateZ(78px);
+    }
+
+    .side:nth-child(3) {
+      transform: rotateY(180deg) translateZ(78px);
+    }
+
+    .side:nth-child(4) {
+      transform: rotateY(270deg) translateZ(78px);
+    }
+
+    .side:nth-child(5) {
+      transform: rotateX(90deg) translateZ(78px);
+    }
+
+    .side:nth-child(6) {
+      transform: rotateX(90deg) translateZ(-78px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>11-3D旋转魔方</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./10-3D旋转木马.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./12-百叶窗.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="container">
+    <ul class="side">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="side">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="side">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="side">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="side">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="side">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+
+</body>
+
+
+</html>

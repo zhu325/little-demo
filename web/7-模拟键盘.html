@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>7-模拟键盘</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container span {
+      font-size: 4rem;
+      color: #ffebcd;
+      text-shadow: 10px 10px 5px rgba(0, 0, 0, .3);
+      opacity: 0;
+      transition: all .5s;
+    }
+
+    .container a {
+      font-size: 1.333333rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s;
+    }
+
+    .keyboard {
+      min-width: 1085px;
+      padding: 20px;
+      background-color: rgb(56, 56, 56);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(30, 30px);
+      grid-template-rows: repeat(5, 60px);
+      grid-gap: 5px;
+    }
+
+    .key {
+      background-color: rgba(243, 243, 243, .8);
+      border-radius: 5px;
+      grid-column: span 2;
+      font: 500 18px '';
+      text-align: center;
+      padding-top: 17px;
+      border: 2px solid black;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .colors {
+      background-color: rgb(230, 134, 50);
+    }
+
+    .color {
+      background-color: rgb(67, 66, 72);
+      color: rgba(243, 243, 243, .8);
+    }
+
+    .key:hover {
+      box-shadow: inset 0 0 7px rgba(0, 0, 0, .8);
+    }
+
+    .backspace,
+    .capsLock,
+    .enter {
+      grid-column: span 4;
+    }
+
+    .backslash,
+    .tab {
+      grid-column: span 3;
+    }
+
+    .shift-right,
+    .shift-left {
+      grid-column: span 5;
+    }
+
+    .space {
+      grid-column: span 16;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sign">
+    <h2>梦开始的地方</h2>
+    <span>7-数字倒计时</span>
+  </div>
+  <div class="author">
+    <h5>ZhuYunLong</h5>
+  </div>
+  <div class="previous">
+    <a href="./6-页面点击文字.html" class="iconfont">&#xe608;</a>
+  </div>
+  <div class="next">
+    <a href="./8-催眠动画.html" class="iconfont">&#xe609;</a>
+  </div>
+  <div class="container">
+    <div class="keyboard">
+      <div class="key colors">ESC</div>
+      <div class="key">1</div>
+      <div class="key">2</div>
+      <div class="key">3</div>
+      <div class="key">4</div>
+      <div class="key">5</div>
+      <div class="key">6</div>
+      <div class="key">7</div>
+      <div class="key">8</div>
+      <div class="key">9</div>
+      <div class="key">0</div>
+      <div class="key">-</div>
+      <div class="key">+</div>
+      <div class="key backspace color">Backspace</div>
+      <div class="key tab color">Tab</div>
+      <div class="key">Q</div>
+      <div class="key">w</div>
+      <div class="key">E</div>
+      <div class="key">R</div>
+      <div class="key">T</div>
+      <div class="key">Y</div>
+      <div class="key">U</div>
+      <div class="key">I</div>
+      <div class="key">O</div>
+      <div class="key">P</div>
+      <div class="key">[</div>
+      <div class="key">]</div>
+      <div class="key backslash color">\</div>
+      <div class="key capsLock color">CapsLock</div>
+      <div class="key">A</div>
+      <div class="key">S</div>
+      <div class="key">D</div>
+      <div class="key">F</div>
+      <div class="key">G</div>
+      <div class="key">H</div>
+      <div class="key">J</div>
+      <div class="key">K</div>
+      <div class="key">L</div>
+      <div class="key">;</div>
+      <div class="key">'</div>
+      <div class="key enter colors">Enter</div>
+      <div class="key shift-left color">Shift</div>
+      <div class="key">Z</div>
+      <div class="key">X</div>
+      <div class="key">C</div>
+      <div class="key">V</div>
+      <div class="key">B</div>
+      <div class="key">N</div>
+      <div class="key">M</div>
+      <div class="key">,</div>
+      <div class="key">.</div>
+      <div class="key">/</div>
+      <div class="key shift-right color">Shift</div>
+      <div class="key color">Ctrl</div>
+      <div class="key color">Win</div>
+      <div class="key color">Alt</div>
+      <div class="key space">Space</div>
+      <div class="key color">Alt</div>
+      <div class="key color">Menu</div>
+      <div class="key color">Ctrl</div>
+      <div class="key color">Fn</div>
+    </div>
+  </div>
+  <script src="../js/jquery-3.6.0.js"></script>
+  <script src="../js/flexible.js"></script>
+</body>
+
+
+</html>
